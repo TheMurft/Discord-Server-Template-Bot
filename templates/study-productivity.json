@@ -1,0 +1,175 @@
+{
+  "templateName": "Study & Productivity Hub",
+  "description": "Tailored for student groups, classrooms, and focus communities with text discussion rooms, task planning, and dedicated study voice lounges.",
+  "roles": [
+    {
+      "name": "👑 Coordinator",
+      "color": "#E74C3C",
+      "hoist": true,
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "🛡️ Moderator",
+      "color": "#2ECC71",
+      "hoist": true,
+      "permissions": [
+        "ManageMessages",
+        "KickMembers",
+        "BanMembers",
+        "MuteMembers"
+      ]
+    },
+    {
+      "name": "🚀 Server Booster",
+      "color": "#F47FFF",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks",
+        "UseExternalEmojis"
+      ]
+    },
+    {
+      "name": "📚 Tutor",
+      "color": "#E67E22",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks"
+      ]
+    },
+    {
+      "name": "✍️ Student",
+      "color": "#3498DB",
+      "hoist": false,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "📌 INFORMATION",
+      "channels": [
+        {
+          "name": "📜-rules",
+          "type": "GuildText",
+          "topic": "Welcome! Please read and follow the study rules and code of conduct."
+        },
+        {
+          "name": "📢-announcements",
+          "type": "GuildText",
+          "topic": "Important notifications, study sessions, and server news."
+        },
+        {
+          "name": "📅-study-schedule",
+          "type": "GuildText",
+          "topic": "Weekly calendar for group focus sessions and exam prep."
+        }
+      ]
+    },
+    {
+      "name": "💬 STUDENT LOUNGE",
+      "channels": [
+        {
+          "name": "💬-general-chat",
+          "type": "GuildText",
+          "topic": "Main hall for off-topic chatter and connecting with peers."
+        },
+        {
+          "name": "🎯-goals-and-habits",
+          "type": "GuildText",
+          "topic": "Post your academic goals and daily productivity milestones."
+        },
+        {
+          "name": "💡-resource-share",
+          "type": "GuildText",
+          "topic": "Share useful notes, cheatsheets, online courses, and textbooks."
+        }
+      ]
+    },
+    {
+      "name": "📖 STUDY ROOMS (TEXT)",
+      "channels": [
+        {
+          "name": "🧮-stem-discussion",
+          "type": "GuildText",
+          "topic": "Math, physics, computer science, chemistry, and engineering help."
+        },
+        {
+          "name": "🎨-humanities-discussion",
+          "type": "GuildText",
+          "topic": "Literature, history, social sciences, and languages."
+        },
+        {
+          "name": "📝-essay-feedback",
+          "type": "GuildText",
+          "topic": "Post draft passages or outlines to get constructive feedback."
+        }
+      ]
+    },
+    {
+      "name": "🔒 STAFF & TUTORS",
+      "channels": [
+        {
+          "name": "🛡️-staff-lounge",
+          "type": "GuildText",
+          "topic": "Private discussions for tutors and server admins.",
+          "restrictedTo": [
+            "📚 Tutor",
+            "🛡️ Moderator",
+            "👑 Coordinator"
+          ]
+        },
+        {
+          "name": "🔊-tutor-desk",
+          "type": "GuildVoice",
+          "restrictedTo": [
+            "📚 Tutor",
+            "🛡️ Moderator",
+            "👑 Coordinator"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🔊 STUDY ROOMS (VOICE)",
+      "channels": [
+        {
+          "name": "🔇 Focus Room (Silent)",
+          "type": "GuildVoice",
+          "userLimit": 99,
+          "topic": "Mute your microphone and focus on your work with others."
+        },
+        {
+          "name": "⏱️ Pomodoro Room 1",
+          "type": "GuildVoice",
+          "userLimit": 15,
+          "topic": "Timed 25/5 study session room."
+        },
+        {
+          "name": "⏱️ Pomodoro Room 2",
+          "type": "GuildVoice",
+          "userLimit": 15,
+          "topic": "Timed 50/10 study session room."
+        },
+        {
+          "name": "👥 Group Project Room",
+          "type": "GuildVoice",
+          "userLimit": 6,
+          "topic": "Discuss collaborative study tasks or project ideas."
+        },
+        {
+          "name": "☕ Break Lounge",
+          "type": "GuildVoice",
+          "userLimit": 99,
+          "topic": "Unwind, chat with friends, and take a study break."
+        }
+      ]
+    }
+  ]
+}

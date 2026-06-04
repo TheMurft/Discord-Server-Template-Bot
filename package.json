@@ -1,0 +1,21 @@
+{
+  "name": "discord-bot-template-generator",
+  "version": "1.0.0",
+  "description": "Discord Bot to wipe and rebuild server structure from JSON templates",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "discord.js",
+    "template",
+    "wipe"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.15.3"
+  }
+}

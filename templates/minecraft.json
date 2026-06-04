@@ -1,0 +1,217 @@
+{
+  "templateName": "Minecraft Network Server",
+  "description": "Tailored for a Minecraft Network with information, global lobby, game modes, VIP zone, voice channels, and staff areas.",
+  "roles": [
+    {
+      "name": "👑 Owner",
+      "color": "#FF0000",
+      "hoist": true,
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "🛡️ Admin",
+      "color": "#E67E22",
+      "hoist": true,
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "⚔️ Moderator",
+      "color": "#2ECC71",
+      "hoist": true,
+      "permissions": [
+        "ManageMessages",
+        "KickMembers",
+        "BanMembers",
+        "MuteMembers"
+      ]
+    },
+    {
+      "name": "🤝 Helper",
+      "color": "#3498DB",
+      "hoist": true,
+      "permissions": [
+        "ManageMessages",
+        "KickMembers"
+      ]
+    },
+    {
+      "name": "💎 VIP",
+      "color": "#F1C40F",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks"
+      ]
+    },
+    {
+      "name": "🎮 Player",
+      "color": "#9B59B6",
+      "hoist": false,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "📌 INFORMATION",
+      "channels": [
+        {
+          "name": "📜-rules",
+          "type": "GuildText",
+          "topic": "Server rules and guidelines. Please read carefully before playing."
+        },
+        {
+          "name": "📢-announcements",
+          "type": "GuildText",
+          "topic": "Official updates and server status announcements."
+        },
+        {
+          "name": "🎁-events",
+          "type": "GuildText",
+          "topic": "Details about ongoing and upcoming network events."
+        },
+        {
+          "name": "🛒-store",
+          "type": "GuildText",
+          "topic": "Support the server! Rank benefits and store link: store.example.com"
+        }
+      ]
+    },
+    {
+      "name": "💬 GLOBAL LOBBY",
+      "channels": [
+        {
+          "name": "💬-general",
+          "type": "GuildText",
+          "topic": "The main lobby. Chat about Minecraft or anything else!"
+        },
+        {
+          "name": "📷-media",
+          "type": "GuildText",
+          "topic": "Show off your base builds, redstone contraptions, or skins."
+        },
+        {
+          "name": "🤖-bot-spam",
+          "type": "GuildText",
+          "topic": "Play games and execute bot commands here."
+        },
+        {
+          "name": "💡-suggestions",
+          "type": "GuildText",
+          "topic": "Suggest features or submit bug reports to improve the network."
+        }
+      ]
+    },
+    {
+      "name": "🎮 GAME SERVERS",
+      "channels": [
+        {
+          "name": "⚔️-survival",
+          "type": "GuildText",
+          "topic": "Discussion, trade, and teaming for the Survival server."
+        },
+        {
+          "name": "🧱-creative",
+          "type": "GuildText",
+          "topic": "Share your massive creative builds and ask for build ratings."
+        },
+        {
+          "name": "🏹-minigames",
+          "type": "GuildText",
+          "topic": "Talk tactics for BedWars, SkyWars, and PvP matches."
+        }
+      ]
+    },
+    {
+      "name": "💎 VIP ZONE",
+      "channels": [
+        {
+          "name": "✨-vip-chat",
+          "type": "GuildText",
+          "topic": "Exclusive chat room for VIP rank supporters and staff.",
+          "restrictedTo": [
+            "💎 VIP",
+            "🤝 Helper",
+            "⚔️ Moderator",
+            "🛡️ Admin",
+            "👑 Owner"
+          ]
+        },
+        {
+          "name": "🔊-vip-voice",
+          "type": "GuildVoice",
+          "restrictedTo": [
+            "💎 VIP",
+            "🤝 Helper",
+            "⚔️ Moderator",
+            "🛡️ Admin",
+            "👑 Owner"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🔊 PUBLIC VOICE",
+      "channels": [
+        {
+          "name": "🔊 General Lobby",
+          "type": "GuildVoice",
+          "userLimit": 99
+        },
+        {
+          "name": "🔊 Survival Duo",
+          "type": "GuildVoice",
+          "userLimit": 2
+        },
+        {
+          "name": "🔊 BedWars Squad",
+          "type": "GuildVoice",
+          "userLimit": 4
+        },
+        {
+          "name": "🔊 AFK Corner",
+          "type": "GuildVoice",
+          "userLimit": 99
+        }
+      ]
+    },
+    {
+      "name": "🎫 SUPPORT & MOD",
+      "channels": [
+        {
+          "name": "📩-tickets",
+          "type": "GuildText",
+          "topic": "Need help, stuck in a block, or reporting a hacker? Open a ticket."
+        },
+        {
+          "name": "🤝-staff-chat",
+          "type": "GuildText",
+          "restrictedTo": [
+            "🤝 Helper",
+            "⚔️ Moderator",
+            "🛡️ Admin",
+            "👑 Owner"
+          ],
+          "topic": "Staff discussion and coordination channel."
+        },
+        {
+          "name": "🛡️-mod-logs",
+          "type": "GuildText",
+          "restrictedTo": [
+            "⚔️ Moderator",
+            "🛡️ Admin",
+            "👑 Owner"
+          ],
+          "topic": "Audit actions and system logging outputs."
+        }
+      ]
+    }
+  ]
+}

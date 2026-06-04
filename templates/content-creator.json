@@ -1,0 +1,203 @@
+{
+  "templateName": "Content Creator Server",
+  "description": "Advanced layout for Streamers, YouTubers, and TikTokers with VIP areas and automated structures.",
+  "roles": [
+    {
+      "name": "👑 Creator",
+      "color": "#FF0000",
+      "hoist": true,
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "🛡️ Moderator",
+      "color": "#2ECC71",
+      "hoist": true,
+      "permissions": [
+        "ManageMessages",
+        "KickMembers",
+        "BanMembers",
+        "MuteMembers"
+      ]
+    },
+    {
+      "name": "🚀 Server Booster",
+      "color": "#F47FFF",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks",
+        "UseExternalEmojis"
+      ]
+    },
+    {
+      "name": "💎 VIP",
+      "color": "#1ABC9C",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks"
+      ]
+    },
+    {
+      "name": "💜 Subscriber",
+      "color": "#9B59B6",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks"
+      ]
+    },
+    {
+      "name": "👥 Community",
+      "color": "#95A5A6",
+      "hoist": false,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "📌 WELCOME & INFO",
+      "channels": [
+        {
+          "name": "📜-rules",
+          "type": "GuildText",
+          "topic": "Server rules and guidelines. Please read carefully."
+        },
+        {
+          "name": "📢-announcements",
+          "type": "GuildText",
+          "topic": "Important news regarding the channel and community."
+        },
+        {
+          "name": "🎭-get-roles",
+          "type": "GuildText",
+          "topic": "Reaction roles to customize your notifications."
+        },
+        {
+          "name": "🤝-social-links",
+          "type": "GuildText",
+          "topic": "Official links to all my social media platforms."
+        }
+      ]
+    },
+    {
+      "name": "🎬 LIVE & CONTENT",
+      "channels": [
+        {
+          "name": "🎥-live-alerts",
+          "type": "GuildText",
+          "topic": "Automated alerts when the stream goes live!"
+        },
+        {
+          "name": "📺-new-videos",
+          "type": "GuildText",
+          "topic": "Never miss a new upload! YouTube/TikTok alerts."
+        },
+        {
+          "name": "💬-stream-chat",
+          "type": "GuildText",
+          "topic": "Chat with the community while the stream is live."
+        }
+      ]
+    },
+    {
+      "name": "💬 COMMUNITY LOUNGE",
+      "channels": [
+        {
+          "name": "💬-general-chat",
+          "type": "GuildText",
+          "topic": "The main hub. Talk about anything here!"
+        },
+        {
+          "name": "🎨-fan-art-and-clips",
+          "type": "GuildText",
+          "topic": "Share your drawings, designs, or funny stream clips."
+        },
+        {
+          "name": "🤖-bot-commands",
+          "type": "GuildText",
+          "topic": "Use your bot commands and games here to avoid spamming general."
+        },
+        {
+          "name": "💡-suggestions",
+          "type": "GuildText",
+          "topic": "Got an idea for the next video or stream? Drop it here!"
+        }
+      ]
+    },
+    {
+      "name": "🔒 VIP & SUBS ZONE",
+      "channels": [
+        {
+          "name": "✨-vip-chat",
+          "type": "GuildText",
+          "topic": "Exclusive chat for Subscribers, Boosters, and VIPs.",
+          "restrictedTo": [
+            "💜 Subscriber",
+            "🚀 Server Booster",
+            "💎 VIP"
+          ]
+        },
+        {
+          "name": "🔊-exclusive-voice",
+          "type": "GuildVoice",
+          "restrictedTo": [
+            "💜 Subscriber",
+            "🚀 Server Booster",
+            "💎 VIP"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🎮 GAMING & VOICE",
+      "channels": [
+        {
+          "name": "➕-create-channel",
+          "type": "GuildVoice",
+          "userLimit": 1,
+          "topic": "Join to create your own private temporary channel."
+        },
+        {
+          "name": "🔊 Squad 1 (🔏)",
+          "type": "GuildVoice",
+          "userLimit": 5
+        },
+        {
+          "name": "🔊 Squad 2 (🔏)",
+          "type": "GuildVoice",
+          "userLimit": 5
+        },
+        {
+          "name": "🔊 Chill Room",
+          "type": "GuildVoice",
+          "userLimit": 99
+        }
+      ]
+    },
+    {
+      "name": "🎫 SUPPORT & MOD",
+      "channels": [
+        {
+          "name": "📩-open-ticket",
+          "type": "GuildText",
+          "topic": "Need help or want to report someone? Open a ticket here."
+        },
+        {
+          "name": "🛡️-mod-chat",
+          "type": "GuildText",
+          "restrictedTo": [
+            "🛡️ Moderator"
+          ],
+          "topic": "Staff discussions and logs."
+        }
+      ]
+    }
+  ]
+}

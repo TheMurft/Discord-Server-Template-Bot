@@ -1,0 +1,147 @@
+{
+  "templateName": "Casual Friends Server",
+  "description": "A polished and cozy template designed for a group of friends, featuring public hubs, gaming lounges, private spaces, and voice chat lobbies.",
+  "roles": [
+    {
+      "name": "👑 Admin",
+      "color": "#1ABC9C",
+      "hoist": true,
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "🚀 Server Booster",
+      "color": "#F47FFF",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks",
+        "UseExternalEmojis"
+      ]
+    },
+    {
+      "name": "🤝 Best Friend",
+      "color": "#E67E22",
+      "hoist": true,
+      "permissions": [
+        "AttachFiles",
+        "EmbedLinks"
+      ]
+    },
+    {
+      "name": "👥 Friend",
+      "color": "#3498DB",
+      "hoist": false,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "📌 LOBBY",
+      "channels": [
+        {
+          "name": "📢-announcements",
+          "type": "GuildText",
+          "topic": "Important info, event planning, and server announcements."
+        },
+        {
+          "name": "🎂-birthdays",
+          "type": "GuildText",
+          "topic": "Celebrate birthdays, send wishes, and check who is next!"
+        }
+      ]
+    },
+    {
+      "name": "💬 CHATTER",
+      "channels": [
+        {
+          "name": "💬-general",
+          "type": "GuildText",
+          "topic": "The main chat room. Grab a coffee and talk about anything!"
+        },
+        {
+          "name": "📷-media",
+          "type": "GuildText",
+          "topic": "Share photos, memes, pet pics, and videos."
+        },
+        {
+          "name": "🤖-bot-stuff",
+          "type": "GuildText",
+          "topic": "Spam bot commands, play minigames, and queue music here."
+        }
+      ]
+    },
+    {
+      "name": "🎮 GAMING LOBBY",
+      "channels": [
+        {
+          "name": "🎮-gaming-talk",
+          "type": "GuildText",
+          "topic": "What are we playing tonight? Chat about games, news, and builds."
+        },
+        {
+          "name": "📺-clips",
+          "type": "GuildText",
+          "topic": "Share your best gaming plays, funny highlights, and clip links."
+        }
+      ]
+    },
+    {
+      "name": "🔒 SECRET LAIR",
+      "channels": [
+        {
+          "name": "✨-best-friends-only",
+          "type": "GuildText",
+          "topic": "A cozy corner for closest friends and admins.",
+          "restrictedTo": [
+            "🤝 Best Friend",
+            "👑 Admin"
+          ]
+        },
+        {
+          "name": "🔊-secret-voice",
+          "type": "GuildVoice",
+          "restrictedTo": [
+            "🤝 Best Friend",
+            "👑 Admin"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "🔊 VOICE CHANNELS",
+      "channels": [
+        {
+          "name": "🔊 Lounge",
+          "type": "GuildVoice",
+          "userLimit": 99
+        },
+        {
+          "name": "🔊 Duo Room",
+          "type": "GuildVoice",
+          "userLimit": 2
+        },
+        {
+          "name": "🔊 Squad Room",
+          "type": "GuildVoice",
+          "userLimit": 4
+        },
+        {
+          "name": "🔊 Streaming Room",
+          "type": "GuildVoice",
+          "userLimit": 10
+        },
+        {
+          "name": "🔊 AFK Sleep",
+          "type": "GuildVoice",
+          "userLimit": 99
+        }
+      ]
+    }
+  ]
+}
