@@ -1,10 +1,9 @@
-const { 
-  Client, 
-  Events,
-  GatewayIntentBits, 
-  EmbedBuilder, 
-  PermissionsBitField, 
-  ChannelType 
+const {
+  Client,
+  GatewayIntentBits,
+  EmbedBuilder,
+  PermissionsBitField,
+  ChannelType
 } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
@@ -51,8 +50,8 @@ function loadTemplates() {
   return templates;
 }
 
-client.once(Events.ClientReady, (readyClient) => {
-  console.log(`Logged in as ${readyClient.user.tag}!`);
+client.once('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
   console.log('Templates loaded successfully.');
 });
 
@@ -78,9 +77,9 @@ client.on('messageCreate', async (message) => {
       embed.setDescription('No templates found in the templates directory.');
     } else {
       for (const [key, template] of Object.entries(templates)) {
-        embed.addFields({ 
-          name: `📋 ${template.name} (\`${key}\`)`, 
-          value: template.description 
+        embed.addFields({
+          name: `📋 ${template.name} (\`${key}\`)`,
+          value: template.description
         });
       }
     }
@@ -138,8 +137,8 @@ client.on('messageCreate', async (message) => {
       for (const [_, role] of roles) {
         // Do not delete @everyone, managed roles (bot/integration roles), or roles higher/equal to bot's highest role
         if (
-          role.id !== guild.id && 
-          !role.managed && 
+          role.id !== guild.id &&
+          !role.managed &&
           role.comparePositionTo(botHighestRole) < 0
         ) {
           try {
@@ -153,7 +152,7 @@ client.on('messageCreate', async (message) => {
       // Step 4: Create new Roles
       console.log('Creating roles from template...');
       const roleMapping = {}; // Keep a map of role name -> role object for permission overrides later
-      
+
       if (template.data.roles && Array.isArray(template.data.roles)) {
         for (const roleDef of template.data.roles) {
           try {
@@ -168,7 +167,7 @@ client.on('messageCreate', async (message) => {
 
             const createdRole = await guild.roles.create({
               name: roleDef.name,
-              colors: roleDef.color || '#99AAB5',
+              color: roleDef.color || '#99AAB5',
               hoist: roleDef.hoist || false,
               permissions: permissions,
               reason: 'Template installation: role creation'
@@ -217,7 +216,7 @@ client.on('messageCreate', async (message) => {
             if (catDef.channels && Array.isArray(catDef.channels)) {
               for (const chanDef of catDef.channels) {
                 const isVoice = chanDef.type === 'GuildVoice';
-                
+
                 // Build channel permission overrides
                 const chanOverwrites = [];
                 if (chanDef.restrictedTo && Array.isArray(chanDef.restrictedTo)) {
@@ -331,8 +330,8 @@ client.on('messageCreate', async (message) => {
     // Roles display
     if (template.data.roles && Array.isArray(template.data.roles)) {
       const rolesList = template.data.roles.map(r => {
-        const perms = r.permissions && r.permissions.length > 0 
-          ? `\`[${r.permissions.join(', ')}]\`` 
+        const perms = r.permissions && r.permissions.length > 0
+          ? `\`[${r.permissions.join(', ')}]\``
           : '*None*';
         return `• **${r.name}** (${r.color}) - Permissions: ${perms}`;
       }).join('\n');
@@ -345,7 +344,7 @@ client.on('messageCreate', async (message) => {
       for (const cat of template.data.categories) {
         const restricted = cat.restrictedTo ? ` 🔒 *(${cat.restrictedTo.join(', ')})*` : '';
         structureStr += `📂 **${cat.name}**${restricted}\n`;
-        
+
         if (cat.channels && Array.isArray(cat.channels)) {
           for (const chan of cat.channels) {
             const cIcon = chan.type === 'GuildVoice' ? '🔊' : '#️⃣';
@@ -356,7 +355,7 @@ client.on('messageCreate', async (message) => {
         }
         structureStr += '\n';
       }
-      
+
       // Split into multiple fields if too long, or clamp it
       if (structureStr.length > 1024) {
         structureStr = structureStr.substring(0, 1021) + '...';
