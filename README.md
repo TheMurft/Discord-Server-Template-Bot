@@ -38,7 +38,9 @@ Developed by **[themurft](https://github.com/themurft)**. Join our **[Discord Se
     ├── minecraft.json
     ├── content-creator.json
     ├── casual.json
-    └── study-productivity.json
+    ├── study-productivity.json
+    ├── events.json
+    └── video.json
 ```
 
 ---
@@ -49,6 +51,8 @@ Developed by **[themurft](https://github.com/themurft)**. Join our **[Discord Se
 2. **`content-creator`**: Tailored for Streamers and Content Creators. Includes live/video alert channels, community rooms, sub/VIP zones, and support desks.
 3. **`casual`**: Cozy layout for a group of friends. Features lounge rooms, media sharing, game rooms, and a secret best-friends-only area.
 4. **`study-productivity`**: Tailored for students, classrooms, and focus hubs. Features academic topics, Pomodoro study lounges, daily goals, and tutor support sections.
+5. `events` : Designed to organize and manage a complete event. Includes announcements, schedules, participation, prizes, event media, staff organization, and voice channels.
+6. `video` : Temporary server template for a single video project. Includes announcements, schedules, resources, community channels, staff organization, and voice channels.
 
 ---
 
