@@ -1,0 +1,158 @@
+{
+  "templateName": "Event Server",
+  "description": "Temporary Discord server template designed to organize and manage a complete event.",
+  "roles": [
+    {
+      "name": "👑 Organizer",
+      "color": "#E74C3C",
+      "hoist": true,
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "🛡️ Staff",
+      "color": "#3498DB",
+      "hoist": true,
+      "permissions": [
+        "ManageMessages",
+        "KickMembers",
+        "MuteMembers"
+      ]
+    },
+    {
+      "name": "🎉 Participant",
+      "color": "#2ECC71",
+      "hoist": false,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "📌 INFORMATION",
+      "channels": [
+        {
+          "name": "📢-announcements",
+          "type": "GuildText",
+          "topic": "Important announcements and updates about the event."
+        },
+        {
+          "name": "📅-schedule",
+          "type": "GuildText",
+          "topic": "Event schedule, activities, dates, and important times."
+        },
+        {
+          "name": "📋-information",
+          "type": "GuildText",
+          "topic": "General information, instructions, and details about the event."
+        },
+        {
+          "name": "📜-rules",
+          "type": "GuildText",
+          "topic": "Rules and guidelines that participants must follow during the event."
+        }
+      ]
+    },
+    {
+      "name": "📝 PARTICIPATION",
+      "channels": [
+        {
+          "name": "📝-registrations",
+          "type": "GuildText",
+          "topic": "Register and confirm participation in the event."
+        },
+        {
+          "name": "❓-questions",
+          "type": "GuildText",
+          "topic": "Ask questions and get help about the event."
+        },
+        {
+          "name": "💬-event-chat",
+          "type": "GuildText",
+          "topic": "Main chat for participants during the event."
+        },
+        {
+          "name": "💡-suggestions",
+          "type": "GuildText",
+          "topic": "Share ideas and suggestions related to the event."
+        }
+      ]
+    },
+    {
+      "name": "🎁 EVENT",
+      "channels": [
+        {
+          "name": "🏆-results",
+          "type": "GuildText",
+          "topic": "Official event results, winners, and rankings."
+        },
+        {
+          "name": "🎁-prizes",
+          "type": "GuildText",
+          "topic": "Information about prizes, rewards, and winners."
+        },
+        {
+          "name": "📸-photos",
+          "type": "GuildText",
+          "topic": "Share photos and memorable moments from the event."
+        },
+        {
+          "name": "🎬-clips",
+          "type": "GuildText",
+          "topic": "Share clips and videos captured during the event."
+        }
+      ]
+    },
+    {
+      "name": "🔊 VOICE",
+      "channels": [
+        {
+          "name": "🔊 Main Room",
+          "type": "GuildVoice",
+          "userLimit": 99
+        },
+        {
+          "name": "🔊 Event Room",
+          "type": "GuildVoice",
+          "userLimit": 10
+        }
+      ]
+    },
+    {
+      "name": "🔒 ORGANIZATION",
+      "channels": [
+        {
+          "name": "💼-staff",
+          "type": "GuildText",
+          "restrictedTo": [
+            "🛡️ Staff",
+            "👑 Organizer"
+          ],
+          "topic": "Private staff coordination and event management."
+        },
+        {
+          "name": "📋-planning",
+          "type": "GuildText",
+          "restrictedTo": [
+            "🛡️ Staff",
+            "👑 Organizer"
+          ],
+          "topic": "Internal event planning and coordination."
+        },
+        {
+          "name": "📊-records",
+          "type": "GuildText",
+          "restrictedTo": [
+            "🛡️ Staff",
+            "👑 Organizer"
+          ],
+          "topic": "Internal event records, registrations, and results."
+        }
+      ]
+    }
+  ]
+}
