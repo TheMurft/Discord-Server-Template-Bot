@@ -1,0 +1,119 @@
+{
+  "templateName": "Video Project Server",
+  "description": "Temporary Discord server template designed to organize a single content creation project from planning to completion.",
+  "roles": [
+    {
+      "name": "👑 Creator",
+      "color": "#FF0000",
+      "hoist": true,
+      "permissions": [
+        "Administrator"
+      ]
+    },
+    {
+      "name": "🎬 Staff",
+      "color": "#3498DB",
+      "hoist": true,
+      "permissions": [
+        "ManageMessages",
+        "KickMembers",
+        "MuteMembers"
+      ]
+    },
+    {
+      "name": "👥 Participant",
+      "color": "#2ECC71",
+      "hoist": false,
+      "permissions": [
+        "ViewChannel",
+        "SendMessages",
+        "ReadMessageHistory"
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "name": "📌 INFORMATION",
+      "channels": [
+        {
+          "name": "📢-announcements",
+          "type": "GuildText",
+          "topic": "Important announcements and updates about the video project."
+        },
+        {
+          "name": "📅-schedule",
+          "type": "GuildText",
+          "topic": "Recording schedules, meetings, deadlines, and important times."
+        },
+        {
+          "name": "🔗-resources",
+          "type": "GuildText",
+          "topic": "Links, references, files, and other resources needed for the video."
+        }
+      ]
+    },
+    {
+      "name": "💬 COMMUNITY",
+      "channels": [
+        {
+          "name": "💬-chat",
+          "type": "GuildText",
+          "topic": "General conversation between everyone involved in the video."
+        },
+        {
+          "name": "💡-suggestions",
+          "type": "GuildText",
+          "topic": "Share ideas and suggestions that could improve the video."
+        },
+        {
+          "name": "📸-clips",
+          "type": "GuildText",
+          "topic": "Share clips, screenshots, previews, and interesting moments from the project."
+        }
+      ]
+    },
+    {
+      "name": "🔒 STAFF",
+      "channels": [
+        {
+          "name": "📋-organization",
+          "type": "GuildText",
+          "restrictedTo": [
+            "🎬 Staff",
+            "👑 Creator"
+          ],
+          "topic": "Internal organization, tasks, and coordination for the video."
+        },
+        {
+          "name": "🔐-private",
+          "type": "GuildText",
+          "restrictedTo": [
+            "🎬 Staff",
+            "👑 Creator"
+          ],
+          "topic": "Private staff discussions and sensitive project information."
+        }
+      ]
+    },
+    {
+      "name": "🔊 VOICE",
+      "channels": [
+        {
+          "name": "🎥 Recording",
+          "type": "GuildVoice",
+          "userLimit": 99
+        },
+        {
+          "name": "🎬 Production",
+          "type": "GuildVoice",
+          "userLimit": 99
+        },
+        {
+          "name": "💬 Meeting",
+          "type": "GuildVoice",
+          "userLimit": 20
+        }
+      ]
+    }
+  ]
+}
